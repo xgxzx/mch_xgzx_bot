@@ -32,7 +32,7 @@ def helps(m: telebot.types.Message):
 @bot.message_handler(content_types=["text", ])
 def handle_text(m: telebot.types.Message):
     try:
-        values = m.text.split(' ')
+        values = m.text.lower().split(' ')
 
         if len(values) != 3:
             raise ConvertingException('Ошибка в написании команды :(')
